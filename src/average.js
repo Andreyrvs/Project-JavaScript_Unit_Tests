@@ -19,13 +19,14 @@ const average = (arrayParam) => {
     if (typeof arrayParam[index] !== 'number') {
       return undefined;
     }
-     media += arrayParam[index];
+    media += arrayParam[index];
   }
   const resultado = media / arrayParam.length;
-  console.log(resultado);
-  return resultado;
+  const inteiro = parseFloat(resultado);
+  console.log(inteiro);
+  return inteiro;
 };
 
-average([0, 0, 0, 0, '0', 0, 1]);
+average([0, 0, 0, 0, 0, 0, 1]);
 
 module.exports = average;
