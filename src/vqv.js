@@ -21,10 +21,10 @@ const vqv = (name, age) => {
     return undefined;
   }
   
-  const Comportamento = `Oi, meu nome é ${name}!
+  const Comportamento = (`Oi, meu nome é ${name}!
 Tenho ${age} anos,
 trabalho na Trybe e mando muito em programação!
-#VQV!`;
+#VQV!`);
   
   // console.log(Comportamento);
   return Comportamento;
