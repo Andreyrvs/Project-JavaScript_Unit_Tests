@@ -26,6 +26,6 @@ const average = (arrayParam) => {
   return resultado;
 };
 
-average([0, 0, 0, 0, "0", 0, 1]);
+average([0, 0, 0, 0, '0', 0, 1]);
 
 module.exports = average;
