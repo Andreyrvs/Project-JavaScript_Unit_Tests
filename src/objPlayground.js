@@ -44,12 +44,20 @@ const calculator = (number1, number2) => {
   return myObj;
 };
 
-console.log(calculator(1, 3));
+// console.log(calculator(1, 3));
 
 const arrayGenerator = (stringCorvert, object) => {
   if (stringCorvert === 'keys') {
-    object = Object.keys();
+    return Object.keys(object);
+  }
+  if (stringCorvert === 'values') {
+    return Object.values(object);
+  }
+  if (stringCorvert === 'entries') {
+    return Object.entries(object);
   }
 };
+
+// console.log(arrayGenerator('entries', { sum: 13, mult: 30, div: 3, sub: 7 }));
 
 module.exports = { calculator, arrayGenerator };
