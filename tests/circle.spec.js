@@ -34,7 +34,8 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(Object.values(circle(3))[1]).toBeCloseTo(28.26)
 
     // falta terminar o Abaixo
-    expect(circle(3)).toBe({radius: 3, circumference: 18.84})
+   
+    expect(circle(3)).toBeCloseTo([3, 28.26, 18.84])
   });
 });
 
