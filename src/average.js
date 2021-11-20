@@ -22,9 +22,6 @@ const average = (arrayParam) => {
     media += arrayParam[index];
   }
   const resultado = media / arrayParam.length;
-  // const inteiro = parseFloat(resultado);
-  // Math.round(resultado);
-  // console.log(resultado);
   return resultado;
 };
 

@@ -23,27 +23,20 @@ const circle = require('../src/circle');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-function calcArea () {
-  let count = 0;
-  const isValid = true;
-  const dataCircle = circle(3);
-  dataCircle.area = parseFloat(circle(3).area.toPrecision(4));
-  
-  return
-}
-
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
     expect(circle('2')).toBeUndefined()
     expect(typeof circle(22)).toEqual('object')
-    /* Ajuda da pessoa estudane Rolwane em conversa pelo slack */
-    const chaves = Object.keys(circle(8))
     expect(chaves.length).toBe(3) 
     expect(circle()).toBeUndefined()
     expect(Object.values(circle(2))[2]).toEqual(12.56)
-    expect(Object.values(circle(3))[1]).toEqual(28.26)
-    
-    // expect(circle(3)).toEqual({radius: 3, area: 28.26, circumference: 18.84})
+    expect(Object.values(circle(3))[1]).toBeCloseTo(28.26)
+
+
+    /*Abaixo Ajuda da pessoa estudane Rolwane em conversa pelo slack */
+    const chaves = Object.keys(circle(8))
+    /*Acima Ajuda da pessoa estudane Rolwane em conversa pelo slack */
+
   });
 });
 
