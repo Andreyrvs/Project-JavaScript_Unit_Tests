@@ -13,7 +13,7 @@
 */
 
 const average = (arrayParam) => {
-  if (arrayParam === []) {
+  if (arrayParam.length === 0) {
     return undefined;
   }
 
@@ -21,7 +21,7 @@ const average = (arrayParam) => {
 
   for (let index = 0; index < arrayParam.length; index += 1) {
     media += arrayParam[index];
-    if (arrayParam[index] === String) {
+    if (typeof arrayParam[index] !== 'number') {
       return undefined;
     }
   }
@@ -29,14 +29,14 @@ const average = (arrayParam) => {
   // console.log(resultado);
   return resultado;
 };
+console.log(average([]));
+// console.log(average([3, 4, 5]));
+// console.log(average([0, 0, 0, 0, 0, 0, 0]));
+// console.log(average([1, 2, 3]));
+// console.log(average([0, 0, 0, 0, 0, 0, 1]));
+// console.log(average([47, 63, 122]));
 
-console.log(average([3, 4, 5]));
-console.log(average([0, 0, 0, 0, 0, 0, 0]));
-console.log(average([1, 2, 3]));
-console.log(average([0, 0, 0, 0, 0, 0, 1]));
-console.log(average([47, 63, 122]));
-
-console.log(average([-11, 2, 5]));
-console.log(average(['-11', -5, 2]));
+// console.log(average([-11, 2, 5]));
+// console.log(average(['-11', -5, 2]));
 
 module.exports = average;
