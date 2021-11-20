@@ -37,11 +37,14 @@ const calculator = (number1, number2) => {
   const myObj = {
     sum: number1 + number2,
     mult: number1 * number2,
-    div: Math.floor(number1 / number2),
+    div: number1 / number2,
     sub: number1 - number2,
   };
+  Math.floor(myObj);
   return myObj;
 };
+
+console.log(calculator());
 
 const arrayGenerator = (type, object) => {
   const retornoDa = calculator();

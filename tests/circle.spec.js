@@ -27,16 +27,14 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
     expect(circle('2')).toBeUndefined()
     expect(typeof circle(22)).toEqual('object')
+    const chaves = Object.keys(circle(8))
     expect(chaves.length).toBe(3) 
     expect(circle()).toBeUndefined()
     expect(Object.values(circle(2))[2]).toEqual(12.56)
     expect(Object.values(circle(3))[1]).toBeCloseTo(28.26)
 
-
-    /*Abaixo Ajuda da pessoa estudane Rolwane em conversa pelo slack */
-    const chaves = Object.keys(circle(8))
-    /*Acima Ajuda da pessoa estudane Rolwane em conversa pelo slack */
-
+    // falta terminar o Abaixo
+    expect(circle(3)).toBe({radius: 3, circumference: 18.84})
   });
 });
 
