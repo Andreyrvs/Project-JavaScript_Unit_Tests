@@ -1,5 +1,6 @@
 const productDetails = require('../src/productDetails');
 
+
 /*
   Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
 
@@ -25,17 +26,22 @@ const productDetails = require('../src/productDetails');
   ]
 
 */
-// console.log(productDetails('Alcool gel', 'batata'));
+
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     expect(typeof productDetails).toBe('function')
-    // expect(productDetails()).toEqual(Array)
+    expect(Array.isArray(productDetails('Alcool gel', 'Máscara'))).toBeTruthy()
     const tamanho = productDetails('Alcool gel', 'Máscara').length
     expect(tamanho).toBe(2)
     expect(productDetails('Alcool gel', 'Máscara')).toEqual([expect.any(Object), expect.any(Object)])
-    // falta 1 aqui
+    const comparaObjetos = productDetails('Alcool gel', 'Máscara')
+    expect(comparaObjetos[0]).not.toEqual(comparaObjetos[1])
 
-    expect(productDetails('Alcool gel', 'Máscara').details.productId).toHaveBeenLastCalledWith('123')
+    const terminaCom123 = productDetails('Alcool gel', 'Máscara')[0].details.productId.endsWith('123') && productDetails('Alcool gel', 'Máscara')[1].details.productId.endsWith('123')
+
+    expect(terminaCom123).toBeTruthy()
+
+    
   });
 });
 
@@ -47,3 +53,4 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste se os dois itens dentro do array retornado pela função são objetos.
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
     // Teste se os dois productIds terminam com 123.
+
