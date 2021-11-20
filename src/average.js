@@ -13,18 +13,30 @@
 */
 
 const average = (arrayParam) => {
+  if (arrayParam === []) {
+    return undefined;
+  }
+
   let media = 0;
 
-  for (let index = 0; index < arrayParam; index += 1) {
-    if (typeof arrayParam[index] !== 'number') {
+  for (let index = 0; index < arrayParam.length; index += 1) {
+    media += arrayParam[index];
+    if (arrayParam[index] === String) {
       return undefined;
     }
-    media += arrayParam[index];
   }
-  const resultado = media / arrayParam.length;
+  const resultado = Math.round(media / arrayParam.length);
+  // console.log(resultado);
   return resultado;
 };
 
-average([0, 0, 0, 0, 0, 0, 1]);
+console.log(average([3, 4, 5]));
+console.log(average([0, 0, 0, 0, 0, 0, 0]));
+console.log(average([1, 2, 3]));
+console.log(average([0, 0, 0, 0, 0, 0, 1]));
+console.log(average([47, 63, 122]));
+
+console.log(average([-11, 2, 5]));
+console.log(average(['-11', -5, 2]));
 
 module.exports = average;
