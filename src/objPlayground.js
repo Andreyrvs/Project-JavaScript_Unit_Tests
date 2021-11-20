@@ -48,7 +48,7 @@ console.log(calculator(1, 3));
 
 const arrayGenerator = (stringCorvert, object) => {
   if (stringCorvert === 'keys') {
-    object = Object.keys()
+    object = Object.keys();
   }
 };
 
