@@ -37,19 +37,19 @@ const calculator = (number1, number2) => {
   const myObj = {
     sum: number1 + number2,
     mult: number1 * number2,
-    div: number1 / number2,
+    div: Math.floor(number1 / number2),
     sub: number1 - number2,
   };
-  Math.floor(myObj);
+
   return myObj;
 };
 
-console.log(calculator());
+console.log(calculator(1, 3));
 
-const arrayGenerator = (type, object) => {
-  const retornoDa = calculator();
-  console.log(retornoDa);
-  Array.from(calculator());
+const arrayGenerator = (stringCorvert, object) => {
+  if (stringCorvert === 'keys') {
+    object = Object.keys()
+  }
 };
 
 module.exports = { calculator, arrayGenerator };

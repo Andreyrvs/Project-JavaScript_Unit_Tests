@@ -29,14 +29,13 @@ const productDetails = require('../src/productDetails');
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     expect(typeof productDetails).toBe('function')
-    // falta 1 aqui
+    // expect(productDetails()).toEqual(Array)
     const tamanho = productDetails('Alcool gel', 'Máscara').length
     expect(tamanho).toBe(2)
     expect(productDetails('Alcool gel', 'Máscara')).toEqual([expect.any(Object), expect.any(Object)])
     // falta 1 aqui
 
-    const terminam123 = productDetails('Alcool gel', 'Máscara')[1].details.productId
-    // expect(terminam123).toHaveBeenLastCalledWith('123')
+    expect(productDetails('Alcool gel', 'Máscara').details.productId).toHaveBeenLastCalledWith('123')
   });
 });
 
